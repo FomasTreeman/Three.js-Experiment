@@ -2,7 +2,9 @@ var width = window.innerWidth,
     height = window.innerHeight;
 
 // Create a renderer and add it to the DOM.
-var renderer = new THREE.WebGLRenderer();
+// var canvas = document.querySelector('#c');
+// var renderer = new THREE.WebGLRenderer({canvas, alpha: true});
+var renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setSize(width, height);
 document.body.appendChild(renderer.domElement);
 // Create the scene 
@@ -31,9 +33,14 @@ var cubeMaterial = new THREE.MeshNormalMaterial();
 var mesh = new THREE.Mesh( geometry, cubeMaterial );
 scene.add( mesh );
 
+
+
+//dont touch me
+
 resize();
 animate();
 window.addEventListener('resize',resize);
+
 
 function resize(){
   let w = window.innerWidth;
